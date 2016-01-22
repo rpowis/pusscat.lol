@@ -5,9 +5,9 @@ export default class extends Component {
   render() {
     return (
       <div className="images">
-        {this.props.list.map(image => {
+        {this.props.list.map((image, i) => {
           return (
-            <figure>
+            <figure key={i}>
               <img src={image} />
             </figure>
           )
