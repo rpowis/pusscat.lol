@@ -5,16 +5,21 @@
  */
 
 import React, { Component } from 'react';
+import Spinner from './../components/Spinner';
 
 export default class extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null
+    }
+  }
+
   render() {
-    return (
-      <div>
-        <h1>Home Page</h1>
-        <p>Coming soon.</p>
-      </div>
-    );
+    if (!this.state.data) {
+      return <Spinner/>;
+    }
   }
 
 }
