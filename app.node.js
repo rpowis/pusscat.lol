@@ -1166,7 +1166,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "img {\n  max-width: 300px;\n}\n", ""]);
+  exports.push([module.id, "h2 {\n  text-align: center;\n  font-size: 50px;\n}\n\nimg {\n  max-width: 300px;\n}\n", ""]);
 
   // exports
 
