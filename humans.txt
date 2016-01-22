@@ -1,0 +1,13 @@
+/* TEAM */
+
+    Solo bb developer: Rory Powis
+    Email: rorypowis@gmail.com
+
+/* THANKS */
+
+    Name: Manon "Pusscat" Corneille
+
+/* TECHNOLOGY COLOPHON */
+
+    ES2015, HTML5, CSS3
+    React, Normalize.css
