@@ -22,15 +22,23 @@ export default class extends Component {
     }
   }
 
+  isBirthday() {
+    var today = new Date();
+    var birthday = new Date(today.getFullYear(), 0, 22);
+    return birthday.setHours(0,0,0,0) === today.setHours(0,0,0,0);
+  }
+
   componentDidMount() {
     const api = this.endpoint + '?key=' + this.apiKey + '&cx=' + this.cx;
-    let query = encodeURIComponent('birthday cat'.replace(/ /g, '+'));
+    let keyword = this.isBirthday() ? 'birthday' : 'happy';
+    let query = encodeURIComponent(keyword + ' cat'.replace(/ /g, '+'));
     let url =  api + '&imgSize=large&q=' + query;
 
     this.fetchData(url);
   }
 
   fetchData(url) {
+
     (async () => {
       try {
         var response = await fetch(url);
