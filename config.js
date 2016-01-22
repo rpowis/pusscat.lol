@@ -5,8 +5,8 @@
  */
 
 export default {
-  title: 'Pusscat LOL Generator',
-  description: 'A little site for lols by a bb for a bb',
-  googleAnalyticsId: 'UA-XXXXX-X',
+  title: 'Pusscat LOL',
+  description: 'A lol site by pusscat for pusscat',
+  googleAnalyticsId: 'UA-XXXXX-X'
 };
 

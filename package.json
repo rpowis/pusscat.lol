@@ -18,12 +18,14 @@
     "eslint": "^1.6.0",
     "eslint-config-airbnb": "0.1.0",
     "eslint-plugin-react": "^3.5.1",
+    "exports-loader": "^0.6.2",
     "fbjs": "^0.3.2",
     "file-loader": "^0.8.4",
     "git-repository": "^0.1.1",
     "glob": "^5.0.15",
     "history": "^1.12.5",
     "hygienist-middleware": "^0.1.0",
+    "imports-loader": "^0.6.5",
     "lodash.merge": "^3.3.2",
     "mkdirp": "^0.5.1",
     "mocha": "^2.3.3",
@@ -53,5 +55,8 @@
     "build": "babel-node --eval \"require('./tools/build')().catch(err => console.log(err.stack))\"",
     "start": "babel-node --eval \"require('./tools/start')().catch(err => console.log(err.stack))\"",
     "deploy": "babel-node --eval \"require('./tools/deploy')().catch(err => console.log(err.stack))\""
+  },
+  "dependencies": {
+    "whatwg-fetch": "^0.10.1"
   }
 }

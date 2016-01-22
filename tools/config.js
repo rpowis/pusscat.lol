@@ -88,7 +88,7 @@ const config = {
       }),
       require('precss')(),
       require('autoprefixer')({
-        browsers: AUTOPREFIXER_BROWSERS
+        browsers: AUTOPREFIXER_BROWSERS,
       }),
     ];
   },
@@ -107,12 +107,15 @@ const appConfig = merge({}, config, {
   devtool: DEBUG ? 'cheap-module-eval-source-map' : false,
   plugins: [
     ...config.plugins,
+    new webpack.ProvidePlugin({
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    }),
     ...(DEBUG ? [] : [
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
-          warnings: VERBOSE
-        }
+          warnings: VERBOSE,
+        },
       }),
       new webpack.optimize.AggressiveMergingPlugin(),
     ]),
