@@ -1138,14 +1138,20 @@ module.exports =
           }
         });
 
+        var message = isBirthday() ? _react2['default'].createElement(
+          'h2',
+          null,
+          'HAPPY BIRTHDAY BABES!!!'
+        ) : _react2['default'].createElement(
+          'h2',
+          null,
+          'Noooooo it\'s you!!!'
+        );
+
         return _react2['default'].createElement(
           'div',
           null,
-          _react2['default'].createElement(
-            'h2',
-            null,
-            'HAPPY BIRTHDAY BABES!!!'
-          ),
+          message,
           _react2['default'].createElement(_componentsImages2['default'], { list: images })
         );
       }
