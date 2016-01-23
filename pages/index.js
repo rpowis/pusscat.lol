@@ -64,7 +64,7 @@ export default class extends Component {
       }
     });
 
-    let message = isBirthday()
+    let message = this.isBirthday()
       ? <h2>HAPPY BIRTHDAY BABES!!!</h2>
       : <h2>Noooooo it's you!!!</h2>;
 
