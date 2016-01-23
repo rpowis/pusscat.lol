@@ -1130,7 +1130,7 @@ module.exports =
         }
 
         var images = Object.keys(this.state.data).map(function (item) {
-          var field = _this2.state.data[item].FIELD1;
+          var field = _this2.state.data[item].rgl_link;
           var regex = /imgurl=(\S+)&imgrefurl/;
           var img = field.match(regex);
           if (img) {
