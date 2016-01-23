@@ -10,7 +10,7 @@ import task from './lib/task';
 // TODO: Update deployment URL
 const remote = {
   name: 'github',
-  url: 'https://github.com/{user}/{repo}.git',
+  url: 'git@github.com:rpowis/pusscat.lol.git',
   branch: 'gh-pages',
 };
 
