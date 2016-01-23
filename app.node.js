@@ -1138,7 +1138,7 @@ module.exports =
           }
         });
 
-        var message = isBirthday() ? _react2['default'].createElement(
+        var message = this.isBirthday() ? _react2['default'].createElement(
           'h2',
           null,
           'HAPPY BIRTHDAY BABES!!!'
