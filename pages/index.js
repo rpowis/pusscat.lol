@@ -68,7 +68,16 @@ export default class extends Component {
       }
     });
 
-    return <Images list={images}></Images>;
+    let message = isBirthday()
+      ? <h2>HAPPY BIRTHDAY BABES!!!</h2>
+      : <h2>Noooooo it's you!!!</h2>;
+
+    return (
+      <div>
+        {message}
+        <Images list={images}></Images>
+      </div>
+    );
   }
 
 }
