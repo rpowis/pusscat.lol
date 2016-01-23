@@ -67,6 +67,9 @@ const config = {
         test: /[\\\/]app\.js$/,
         loader: path.join(__dirname, './lib/routes-loader.js'),
       }, {
+        test: /masonry|imagesloaded|fizzy\-ui\-utils|desandro\-|outlayer|get\-size|doc\-ready|eventie|eventemitter/,
+        loader: 'imports?define=>false&this=>window'
+      }, {
         test: /\.json$/,
         loader: 'json-loader',
       }, {

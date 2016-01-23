@@ -1,19 +1,29 @@
-import React, { Component } from 'react';
+var React = require('react');
+var Packery = require('react-packery-component')(React);
+import './Images.scss';
 
-export default class extends Component {
+var packeryOptions = {
+  transitionDuration: 0
+};
 
-  render() {
+var Images = React.createClass({
+  render: function () {
+    var childElements = this.props.list.map(function(element) {
+     return (
+       <img src={element} />
+     );
+   });
+
     return (
-      <div className="images">
-        {this.props.list.map((image, i) => {
-          return (
-            <figure key={i}>
-              <img src={image} />
-            </figure>
-          )
-        })}
-      </div>
+      <Packery
+        className={'my-gallery-class'} // default ''
+        options={packeryOptions} // default {}
+        disableImagesLoaded={false} // default false
+      >
+        {childElements}
+      </Packery>
     );
   }
+});
 
-}
+module.exports = Images;
