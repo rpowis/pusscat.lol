@@ -26,8 +26,16 @@ export default class extends Component {
     return birthday.setHours(0,0,0,0) === today.setHours(0,0,0,0);
   }
 
+  isAnniversary() {
+    var today = new Date();
+    var anniversary = new Date(today.getFullYear(), 5, 23);
+    return anniversary.setHours(0,0,0,0) === today.setHours(0,0,0,0);
+  }
+
   componentDidMount() {
-    let keyword = this.isBirthday() ? 'birthday' : 'happy';
+    let keyword = this.isBirthday() ? 'birthday' :
+                  this.isAnniversary() ? 'anniversary' :
+                                          'happy';
     let url = this.endpoint + '/data/' + keyword + '.json';
 
     this.fetchData(url);
@@ -56,17 +64,12 @@ export default class extends Component {
     }
 
     let images = Object.keys(this.state.data).map(item => {
-      let field = this.state.data[item].rgl_link;
-      let regex = /imgurl=(\S+)&imgrefurl/;
-      let img = field.match(regex);
-      if (img) {
-        return img[1];
-      }
+      return this.state.data[item].rgi_image;
     });
 
-    let message = this.isBirthday()
-      ? <h2>HAPPY BIRTHDAY BABES!!!</h2>
-      : <h2>Noooooo it's you!!!</h2>;
+    let message = this.isBirthday() ? <h2>HAPPY BIRTHDAY BABES!!!</h2> :
+                  this.isAnniversary() ? <h2>HAPPY ANNIVERSARY MY LOVE!!!</h2> :
+                  <h2>Noooooo it's you!!!</h2>
 
     return (
       <div>
