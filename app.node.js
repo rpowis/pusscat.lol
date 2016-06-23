@@ -1069,9 +1069,16 @@ module.exports =
         return birthday.setHours(0, 0, 0, 0) === today.setHours(0, 0, 0, 0);
       }
     }, {
+      key: 'isAnniversary',
+      value: function isAnniversary() {
+        var today = new Date();
+        var anniversary = new Date(today.getFullYear(), 5, 23);
+        return anniversary.setHours(0, 0, 0, 0) === today.setHours(0, 0, 0, 0);
+      }
+    }, {
       key: 'componentDidMount',
       value: function componentDidMount() {
-        var keyword = this.isBirthday() ? 'birthday' : 'happy';
+        var keyword = this.isBirthday() ? 'birthday' : this.isAnniversary() ? 'anniversary' : 'happy';
         var url = this.endpoint + '/data/' + keyword + '.json';
 
         this.fetchData(url);
@@ -1130,18 +1137,17 @@ module.exports =
         }
 
         var images = Object.keys(this.state.data).map(function (item) {
-          var field = _this2.state.data[item].rgl_link;
-          var regex = /imgurl=(\S+)&imgrefurl/;
-          var img = field.match(regex);
-          if (img) {
-            return img[1];
-          }
+          return _this2.state.data[item].rgi_image;
         });
 
         var message = this.isBirthday() ? _react2['default'].createElement(
           'h2',
           null,
           'HAPPY BIRTHDAY BABES!!!'
+        ) : this.isAnniversary() ? _react2['default'].createElement(
+          'h2',
+          null,
+          'HAPPY ANNIVERSARY MY LOVE!!!'
         ) : _react2['default'].createElement(
           'h2',
           null,
@@ -1186,7 +1192,7 @@ module.exports =
   exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Lobster);", ""]);
 
   // module
-  exports.push([module.id, "\n\n/**\r\n * React Static Boilerplate\r\n * https://github.com/koistya/react-static-boilerplate\r\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\r\n */\r\n\r\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\r\n\r\nhtml, body {\r\n  margin: 0;\r\n  padding: 0;\r\n  background-color: #f7f7f7;\r\n  color: #333;\r\n  font-family: 'Lobster',cursive;\r\n}\r\n\r\n.Layout {\r\n  margin: 0 auto;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n  .Layout {\r\n    width: calc(768px - 18px);\r\n  }\r\n}\r\n\r\n@media (min-width: 992px) {\r\n  .Layout {\r\n    width: calc(992px - 22px);\r\n  }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n  .Layout {\r\n    width: calc(1200px - 30px);\r\n  }\r\n}\r\n", ""]);
+  exports.push([module.id, "\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  background-color: #f7f7f7;\n  color: #333;\n  font-family: 'Lobster',cursive;\n}\n\n.Layout {\n  margin: 0 auto;\n}\n\n@media (min-width: 768px) {\n  .Layout {\n    width: calc(768px - 18px);\n  }\n}\n\n@media (min-width: 992px) {\n  .Layout {\n    width: calc(992px - 22px);\n  }\n}\n\n@media (min-width: 1200px) {\n  .Layout {\n    width: calc(1200px - 30px);\n  }\n}\n", ""]);
 
   // exports
 
@@ -1200,7 +1206,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\r\n * React Static Boilerplate\r\n * https://github.com/koistya/react-static-boilerplate\r\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\r\n */\r\n\r\n.Link {\r\n\r\n}\r\n", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n.Link {\n\n}\n", ""]);
 
   // exports
 
@@ -1214,7 +1220,7 @@ module.exports =
   exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Lobster);", ""]);
 
   // module
-  exports.push([module.id, "\n\n/**\r\n * React Static Boilerplate\r\n * https://github.com/koistya/react-static-boilerplate\r\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\r\n */\r\n\r\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\r\n\r\n.Navigation {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n  -webkit-flex-direction: row;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  margin: 2em 0 5em 0;\r\n  list-style: none;\r\n  -webkit-box-pack: end;\r\n  -webkit-justify-content: flex-end;\r\n      -ms-flex-pack: end;\r\n          justify-content: flex-end;\r\n}\r\n\r\n.Navigation-item {\r\n  padding: 0 2em;\r\n}\r\n\r\n.Navigation-link {\r\n  padding: 0.5em 1em;\r\n  color: #21ce99;\r\n  text-decoration: none;\r\n  text-transform: uppercase;\r\n  cursor: pointer\r\n}\r\n\r\n.Navigation-link:hover {\r\n  border-bottom: 3px solid #21ce99;\r\n  color: #333;\r\n}\r\n", ""]);
+  exports.push([module.id, "\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.Navigation {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin: 2em 0 5em 0;\n  list-style: none;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Navigation-item {\n  padding: 0 2em;\n}\n\n.Navigation-link {\n  padding: 0.5em 1em;\n  color: #21ce99;\n  text-decoration: none;\n  text-transform: uppercase;\n  cursor: pointer\n}\n\n.Navigation-link:hover{\n  border-bottom: 3px solid #21ce99;\n  color: #333;\n}\n", ""]);
 
   // exports
 
