@@ -19,7 +19,7 @@
     "eslint-config-airbnb": "0.1.0",
     "eslint-plugin-react": "^3.5.1",
     "exports-loader": "^0.6.2",
-    "fbjs": "^0.3.2",
+    "fbjs": "^0.8.8",
     "file-loader": "^0.8.4",
     "git-repository": "^0.1.1",
     "glob": "^5.0.15",
