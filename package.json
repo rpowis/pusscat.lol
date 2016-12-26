@@ -31,7 +31,7 @@
     "mocha": "^2.3.3",
     "ncp": "^2.0.0",
     "node-libs-browser": "^0.5.3",
-    "postcss": "^5.0.10",
+    "postcss": "^5.2.8",
     "postcss-import": "^7.0.0",
     "postcss-loader": "^0.6.0",
     "precss": "^1.2.3",
