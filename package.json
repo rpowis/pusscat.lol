@@ -33,7 +33,7 @@
     "node-libs-browser": "^0.5.3",
     "postcss": "^5.0.10",
     "postcss-import": "^7.0.0",
-    "postcss-loader": "^0.6.0",
+    "postcss-loader": "^2.0.1",
     "precss": "^1.2.3",
     "raw-loader": "^0.5.1",
     "react": "^0.14.0",
